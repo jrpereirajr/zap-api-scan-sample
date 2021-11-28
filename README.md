@@ -1,2 +1,2 @@
 ## zap-api-scan-sample
-TODO:
+An example on how to scan your REST APIs on IRIS using the OWASP Zed Attack Proxy (ZAP) API vulnerabilities scanner.
