@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "c0054f0a-e090-49fa-b845-5b5b27c17ed5",
+		"name": "secured rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ChangeMe",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "John",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Name\": \"John Doe\",\n        \"Title\": \"Assistant Hygienist\",\n        \"Company\": \"RoboPlex Gmbh.\",\n        \"Phone\": \"876-703-7347\",\n        \"DOB\": \"1927-08-01\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:52773/crud/persons/",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"persons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ChangeMe",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "John",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Name\": \"John Doe\",\n        \"Title\": \"Assistant Hygienist\",\n        \"Company\": \"RoboPlex Gmbh.\",\n        \"Phone\": \"876-703-7347\",\n        \"DOB\": \"1927-08-01\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:52773/crud/persons/1",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Person",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "BillPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Bill",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Name\": \"John Doe\",\n        \"Title\": \"Assistant Hygienist\",\n        \"Company\": \"RoboPlex Gmbh.\",\n        \"Phone\": \"876-703-7347\",\n        \"DOB\": \"1927-08-01\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:52773/crud/persons/1",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "BillPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Bill",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"Name\": \"John Doe\",\n        \"Title\": \"Assistant Hygienist\",\n        \"Company\": \"RoboPlex Gmbh.\",\n        \"Phone\": \"876-703-7347\",\n        \"DOB\": \"1927-08-01\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:52773/crud/persons/all",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"persons",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
