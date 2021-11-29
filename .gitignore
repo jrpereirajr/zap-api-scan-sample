@@ -1,7 +1,2 @@
 .DS_Store
 
-zap-pool/api-specs/*
-zap-pool/in/*
-zap-pool/out/*
-zap-pool/report-md/*
-zap-pool/report-html/*
