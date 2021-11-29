@@ -41,6 +41,34 @@ Do ##class(dc.sample.zap.filepool.ZapOpenApiScanService).%New().PrintAllWebApps(
 ```
 If you suppress the namespace, the current one is used.
 ## Scanner results
+This project uses  three capabilities of ZAP to provide reports: plain text, HTML and Markdown.
+
+The plain text just shows which tests passed and which failed, as well a summary at the end. A code for details about the OWASP vulnerability is also presented for each test.
+```
+-------------------------------------------
+ZAP API Scan for: /crud
+-------------------------------------------
+2021-11-29 03:44:16,920 Could not find custom hooks file at /home/zap/.zap_hooks.py 
+2021-11-29 03:44:32,869 Number of Imported URLs: 8
+Total of 19 URLs
+PASS: Directory Browsing [0]
+PASS: Vulnerable JS Library [10003]
+PASS: Cookie No HttpOnly Flag [10010]
+...
+PASS: Loosely Scoped Cookie [90033]
+WARN-NEW: Unexpected Content-Type was returned [100001] x 24 
+        http://host.docker.internal:52773/crud/persons/all (401 Unauthorized)
+        http://host.docker.internal:52773/crud/ (401 Unauthorized)
+        http://host.docker.internal:52773/crud/_spec (401 Unauthorized)
+        http://host.docker.internal:52773/crud/persons/id (401 Unauthorized)
+        http://host.docker.internal:52773/crud/persons/id (401 Unauthorized)
+...
+FAIL-NEW: 0     FAIL-INPROG: 0  WARN-NEW: 3     WARN-INPROG: 0  INFO: 0 IGNORE: 0       PASS: 74
+-------------------------------------------
+Markdown: /irisdev/app/zap-pool/report-md/6607713456438727.md
+HTML: /irisdev/app/zap-pool/report-html/6607713456438727.html
+```
+At the bottom of the plain text report, the path for HTML and Markdown reports are presented. These reports are similar and have much more details, like vulnerability description and a quick help on how to fix it. You can check out samples of [HTML](https://htmlpreview.github.io/?https://raw.githubusercontent.com/jrpereirajr/zap-api-scan-sample/master/misc/6607713456438727.html) and [Markdown](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/misc/6607713456438727.md) reports.
 ## How does it work?
 
 
