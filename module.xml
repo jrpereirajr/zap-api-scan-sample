@@ -14,12 +14,14 @@
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="dc.sample.rest.PKG"/>
+      <Resource Name="dc.sample.zap.PKG"/>
+      <Resource Name="dc.sample.zap.filepool.PKG"/>
       <Invoke Class="dc.sample.rest.Person" Method="AddTestData"></Invoke>
       <Invoke Class="dc.sample.rest.Security" Method="CreateUsers"></Invoke>
       <Invoke Class="dc.sample.rest.Security" Method="CreateRoles"></Invoke>
       <Invoke Class="dc.sample.rest.Security" Method="GrantRoles"></Invoke>
 
-       <CSPApplication 
+      <CSPApplication 
         Url="/crud"
         DispatchClass="dc.sample.rest.PersonREST"
         MatchRoles=":{$dbrole}"
@@ -28,9 +30,8 @@
         Recurse="1"
         UseCookies="2"
         CookiePath="/crud"
-
-       />
-       <CSPApplication 
+      />
+      <CSPApplication 
         Url="/crudall"
         DispatchClass="dc.sample.rest.PersonREST"
         MatchRoles=":{$dbrole}"
@@ -39,7 +40,17 @@
         Recurse="1"
         UseCookies="2"
         CookiePath="/crudall"
-       />
+      />
+      <!-- <CSPApplication 
+        Url="/zap-api-scan"
+        DispatchClass="dc.sample.zap.ZapOpenApiScanDispatcher"
+        MatchRoles=":{$all}"
+        PasswordAuthEnabled="0"
+        UnauthenticatedEnabled="1"
+        Recurse="1"
+        UseCookies="2"
+        CookiePath="/zap-api-scan"
+      /> -->
     </Module>
     
   </Document>

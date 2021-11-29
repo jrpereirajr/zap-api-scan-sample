@@ -1,4 +1,5 @@
 version: '3.6'
+
 services:
   iris:
     build: 
@@ -10,4 +11,21 @@ services:
       - 52773:52773
       - 53773
     volumes:
-      - ./:/irisdev/app
+      - ./:/irisdev/app:rw
+    networks:
+      - rest-sec-test
+
+  owasp-zap:
+    image: owasp/zap2docker-stable
+    command: sh /irisdev/app/zap-pool/listener.sh
+    networks:
+      - rest-sec-test
+    ports:  
+      - 8090:8090
+    volumes:
+      - ./:/irisdev/app:rw
+      - ./zap-pool:/zap/wrk/:rw
+
+networks:
+  rest-sec-test:
+    driver: bridge
