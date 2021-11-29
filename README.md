@@ -1,7 +1,5 @@
 ## zap-api-scan-sample
 An example on how to scan your REST APIs on IRIS using the OWASP Zed Attack Proxy (ZAP) API vulnerabilities scanner.
-
-UNDER DEVELOPMENT
 ## Project goal
 As security is a very important topic, we need to keep track of how our applications are going about security by conducting security tests periodically.
 
@@ -56,7 +54,7 @@ PASS: Vulnerable JS Library [10003]
 PASS: Cookie No HttpOnly Flag [10010]
 ...
 PASS: Loosely Scoped Cookie [90033]
-WARN-NEW: Unexpected Content-Type was returned [100001] x 24 
+WARN-NEW: Content Security Policy (CSP) Header Not Set [10038] x 6 
         http://host.docker.internal:52773/crud/persons/all (401 Unauthorized)
         http://host.docker.internal:52773/crud/ (401 Unauthorized)
         http://host.docker.internal:52773/crud/_spec (401 Unauthorized)
@@ -68,7 +66,43 @@ FAIL-NEW: 0     FAIL-INPROG: 0  WARN-NEW: 3     WARN-INPROG: 0  INFO: 0 IGNORE: 
 Markdown: /irisdev/app/zap-pool/report-md/6607713456438727.md
 HTML: /irisdev/app/zap-pool/report-html/6607713456438727.html
 ```
-At the bottom of the plain text report, the path for HTML and Markdown reports are presented. These reports are similar and have much more details, like vulnerability description and a quick help on how to fix it. You can check out samples of [HTML](https://htmlpreview.github.io/?https://raw.githubusercontent.com/jrpereirajr/zap-api-scan-sample/master/misc/6607713456438727.html) and [Markdown](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/misc/6607713456438727.md) reports.
+At the bottom of the plain text report, the path for HTML and Markdown reports are presented. These reports are similar and have much more details, like vulnerability description and a quick help on how to fix it, for instance:
+
+---
+### [ Content Security Policy (CSP) Header Not Set ](https://www.zaproxy.org/docs/alerts/10038/)
+
+##### Medium (High)
+
+### Description
+
+Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+
+* URL: http://host.docker.internal:52773/crud/persons/id
+  * Method: `DELETE`
+  * Parameter: ``
+  * Attack: ``
+  * Evidence: ``
+
+...
+
+* URL: http://host.docker.internal:52773/crud/persons/id
+  * Method: `PUT`
+  * Parameter: ``
+  * Attack: ``
+  * Evidence: ``
+
+Instances: 6
+
+### Solution
+
+Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: "Content-Security-Policy" for Chrome 25+, Firefox 23+ and Safari 7+, "X-Content-Security-Policy" for Firefox 4.0+ and Internet Explorer 10+, and "X-WebKit-CSP" for Chrome 14+ and Safari 6+.
+
+---
+
+Check out these links to see complete samples of [HTML](https://htmlpreview.github.io/?https://raw.githubusercontent.com/jrpereirajr/zap-api-scan-sample/master/misc/6607713456438727.html) and [Markdown](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/misc/6607713456438727.md) reports.
 ## How does it work?
+ZAP has several ways to perform security tests, such as scripts or API. This project used execution by scripts executed in an official docker image of ZAP.
 
+So, in order to let the IRIS container execute scripts in the ZAP container, a shared volume was set up in docker-compose.yaml file. In this volume, IRIS writes scripts which are detected and executed by the ZAP container. In the same way, the ZAP container writes out the output in the same shared volume, so the IRIS container can read them.
 
+As an improvement in this project, I’m planning to use the ZAP API in place of file sharing. An API for executing tests and presenting reports directly in the browser is also planned.
