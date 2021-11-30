@@ -106,3 +106,8 @@ ZAP has several ways to perform security tests, such as scripts or API. This pro
 So, in order to let the IRIS container execute scripts in the ZAP container, a shared volume was set up in docker-compose.yaml file. In this volume, IRIS writes scripts which are detected and executed by the ZAP container. In the same way, the ZAP container writes out the output in the same shared volume, so the IRIS container can read them.
 
 As an improvement in this project, I’m planning to use the ZAP API in place of file sharing. An API for executing tests and presenting reports directly in the browser is also planned.
+
+## Dream team
+
+* [Henrique Dias](https://community.intersystems.com/user/henrique-dias-2)
+* [José Roberto Pereira](https://community.intersystems.com/user/jos%C3%A9-roberto-pereira-0)
