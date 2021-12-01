@@ -99,7 +99,6 @@ Ensure that your web server, application server, load balancer, etc. is configur
 
 ---
 
-Check out these links to see complete samples of [HTML](https://htmlpreview.github.io/?https://raw.githubusercontent.com/jrpereirajr/zap-api-scan-sample/master/misc/6607713456438727.html) and [Markdown](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/misc/6607713456438727.md) reports.
 ## How does it work?
 ZAP has several ways to perform security tests, such as scripts or API. This project used execution by scripts executed in an official docker image of ZAP.
 
