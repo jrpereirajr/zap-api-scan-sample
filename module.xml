@@ -7,6 +7,10 @@
           <Name>swagger-ui</Name>
           <Version>1.*.*</Version>
         </ModuleReference>
+        <ModuleReference>
+          <Name>webterminal</Name>
+          <Version>latest</Version>
+        </ModuleReference>
       </Dependencies>
       <Description>And example of a secured REST API deployment with Roles, Users and Access management</Description>
       <Name>dc-sample-rest</Name>

@@ -15,7 +15,7 @@
       "links": {
         "SwaggerUI": "http://localhost:${port}/swagger-ui/index.html",
         "All Records Unsecured": "http://localhost:${port}/crudall/persons/all",
-        "All Records Basic Authentication (Bill)": "http://localhost:${port}/crud/persons/all",
+        "All Records Basic Authentication (Bill)": "http://localhost:${port}/crud/persons/all"
       },
       "active": true
     },
