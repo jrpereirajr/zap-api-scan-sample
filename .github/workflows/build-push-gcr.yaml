@@ -10,7 +10,7 @@ env:
   # Change this section according to your needs
   IMAGE_NAME:   zap-api-scan-sample
   SERVICE:      deploy-zap-api-scan-sample
-  DOMAIN_NAME:  zap-api-scan-sample.contest.community.intersystems.com
+  DOMAIN_NAME:  zapsample.contest.community.intersystems.com
 # Leave this section untouched
   PROJECT_ID:   iris-community-demos
   CLUSTER_NAME: demo
