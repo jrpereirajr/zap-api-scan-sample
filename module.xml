@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="dc-sample-rest.ZPM">
+  <Document name="zap-api-sca-sample.ZPM">
     <Module>
       <Dependencies>
         <ModuleReference>
           <Name>swagger-ui</Name>
           <Version>1.*.*</Version>
         </ModuleReference>
-      <Dependencies>
-      </Dependencies>
         <ModuleReference>
           <Name>webterminal</Name>
-          <Version>latest</Version>
+          <Version>4.9.2</Version>
         </ModuleReference>
       </Dependencies>
       <Description>And example of a secured REST API deployment with Roles, Users and Access management</Description>
-      <Name>dc-sample-rest</Name>
+      <Name>zap-api-sca-sample</Name>
       <Version>1.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
