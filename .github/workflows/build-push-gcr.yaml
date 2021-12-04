@@ -11,14 +11,13 @@ env:
   IMAGE_NAME:   zap-api-scan-sample
   SERVICE:      deploy-zap-api-scan-sample
   DOMAIN_NAME:  zap-api-scan-sample.contest.community.intersystems.com
-
-  # Leave this section untouched
-  PROJECT_ID:   hackathon-297608
-  CLUSTER_NAME: contest
+# Leave this section untouched
+  PROJECT_ID:   iris-community-demos
+  CLUSTER_NAME: demo
   GITHUB_SHA:   ${{ github.sha }}
   GCR_LOCATION: eu.gcr.io
   REGION:       europe-west2
-  NAMESPACE:    contest
+  NAMESPACE:    demo
 
 jobs:
   deploy-cloud-run:
@@ -39,8 +38,7 @@ jobs:
 
     - name: Build and Push image
       run: |
-        docker build -t ${GCR_LOCATION}/${PROJECT_ID}/${IMAGE_NAME}:${GITHUB_SHA} .
-        docker push ${GCR_LOCATION}/${PROJECT_ID}/${IMAGE_NAME}:${GITHUB_SHA}
+        docker buildx build -t ${GCR_LOCATION}/${PROJECT_ID}/${IMAGE_NAME}:${GITHUB_SHA} --push .
 
     - name: Deploy to Cloud Run
       run: |
