@@ -106,6 +106,15 @@ So, in order to let the IRIS container execute scripts in the ZAP container, a s
 
 As an improvement in this project, I’m planning to use the ZAP API in place of file sharing. An API for executing tests and presenting reports directly in the browser is also planned.
 
+## Articles
+
+English: https://community.intersystems.com/post/why-how-whats-zap-api-scan-sample
+Português: https://pt.community.intersystems.com/post/por-que-como-o-que-%C3%A9-zap-api-scan-sample
+
+## Video
+
+[![](https://img.youtube.com/vi/k7tlUXGPPb8/0.jpg)](https://www.youtube.com/watch?v=k7tlUXGPPb8)
+
 ## Dream team
 
 * [Henrique Dias](https://community.intersystems.com/user/henrique-dias-2)
