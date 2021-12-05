@@ -14,7 +14,7 @@
       </Dependencies>
       <Description>And example of a secured REST API deployment with Roles, Users and Access management</Description>
       <Name>zap-api-sca-sample</Name>
-      <Version>1.0.1</Version>
+      <Version>1.0.2</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="dc.sample.rest.PKG"/>
