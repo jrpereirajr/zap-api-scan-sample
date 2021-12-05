@@ -109,6 +109,7 @@ As an improvement in this project, I’m planning to use the ZAP API in place of
 ## Articles
 
 English: https://community.intersystems.com/post/why-how-whats-zap-api-scan-sample
+
 Português: https://pt.community.intersystems.com/post/por-que-como-o-que-%C3%A9-zap-api-scan-sample
 
 ## Video
