@@ -10,10 +10,10 @@ env:
   # Change this section according to your needs
   IMAGE_NAME:   zap-api-scan-sample
   SERVICE:      deploy-zap-api-scan-sample
-  DOMAIN_NAME:  zapsample.demo.community.intersystems.com
+  DOMAIN_NAME:  zapsample.contest.community.intersystems.com
 # Leave this section untouched
   PROJECT_ID:   iris-community-demos
-  CLUSTER_NAME: demo
+  CLUSTER_NAME: contest
   GITHUB_SHA:   ${{ github.sha }}
   GCR_LOCATION: eu.gcr.io
   REGION:       europe-west2
