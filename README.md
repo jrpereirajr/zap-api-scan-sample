@@ -106,9 +106,15 @@ So, in order to let the IRIS container execute scripts in the ZAP container, a s
 
 As an improvement in this project, I’m planning to use the ZAP API in place of file sharing. An API for executing tests and presenting reports directly in the browser is also planned.
 
+## GitHub Action
+
+You can configure a GitHub action to perform API scans on every push to the repository. Check out [this example](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/.github/workflows/owasp-zap-api-scan.yaml) to see how to do it. You can also get more information in (this article)[https://community.intersystems.com/post/zap-api-scan-github-action].
+
 ## Articles
 
-English: https://community.intersystems.com/post/why-how-whats-zap-api-scan-sample
+English: 
+*   https://community.intersystems.com/post/why-how-whats-zap-api-scan-sample
+*   https://community.intersystems.com/post/zap-api-scan-github-action
 
 Português: https://pt.community.intersystems.com/post/por-que-como-o-que-%C3%A9-zap-api-scan-sample
 
