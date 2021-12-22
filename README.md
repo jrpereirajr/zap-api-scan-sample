@@ -108,7 +108,7 @@ As an improvement in this project, I’m planning to use the ZAP API in place of
 
 ## GitHub Action
 
-You can configure a GitHub action to perform API scans on every push to the repository. Check out [this example](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/.github/workflows/owasp-zap-api-scan.yaml) to see how to do it. You can also get more information in (this article)[https://community.intersystems.com/post/zap-api-scan-github-action].
+You can configure a GitHub action to perform API scans on every push to the repository. Check out [this example](https://github.com/jrpereirajr/zap-api-scan-sample/blob/master/.github/workflows/owasp-zap-api-scan.yaml) to see how to do it. You can also get more information in [this article](https://community.intersystems.com/post/zap-api-scan-github-action).
 
 ## Articles
 
